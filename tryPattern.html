@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+
+<body> 
+
+
+    <src img="https://media.geeksforgeeks.org/wp-content/uploads/20230201105319/Pattern-Printing-in-Java.jpg" />
+
+
+    <script>
+        // pattern
+
+        // * * * * *
+        // *       *
+        // *       *
+        // *       *
+        // * * * * *
+
+
+        {
+            let n = 5;
+
+            for (let i = 1; i <= n; i++) {
+                let row = "";
+
+                for (let j = 1; j <= n; j++) {
+                    if (i === 1 || i === n || j === 1 || j === n) {
+                        row += "*";
+                    } else {
+                        row += " ";
+                    }
+                }
+
+                console.log(row);
+            }
+        }
+    </script>
+
+    <script>
+        // pattern
+
+        //    1
+        //   2 2
+        //  3 3 3
+        // 4 4 4 4
+        let num = 4;
+
+        for (let i = 1; i <= num; i++) {
+            let row = "";
+
+            // spaces
+            for (let j = 1; j <= num - i; j++) {
+                row += " ";
+            }
+
+            for (let j = 1; j <= i; j++) {
+                row += "" + i;
+            }
+            //  spaces
+            for (let j = 1; j <= num - i; j++) {
+                row += " ";
+            }
+
+            console.log(row);
+        }
+    </script>
+    <script>
+        // pattern
+
+        // 1
+        // 12
+        // 123
+        // 1234
+        let digit = 4;
+
+        for (let i = 1; i <= digit; i++) {
+            let row = "";
+            for (let j = 1; j <= i; j++) {
+                row += j;
+            }
+            console.log(row);
+        }
+
+
+    </script>
+
+    <script>
+        // pattern
+
+        // 1234
+        // 123
+        // 12
+        // 1
+        let p = 4;
+
+        for (let i = p; i >= 1; i--) {
+            let row = "";
+
+            for (let j = 1; j <= i; j++) {
+                row += j;
+            }
+
+            console.log(row);
+        }
+    </script>
+
+    <script>
+        // pattern
+
+        // 1
+        // 2 3
+        // 4 5 6
+        // 7 8 9 10
+
+        let a = 4, count = 1;
+
+        for (let i = 1; i <= a; i++) {
+            let row = "";
+            for (let j = 1; j <= i; j++) {
+                row += count + " ";
+                count++;
+            }
+            console.log(row);
+        }
+
+    </script>
+
+    <script>
+        // pattern
+
+        // 1
+        // 01
+        // 101
+        // 0101
+        {
+            let n = 4;
+
+            for (let i = 1; i <= n; i++) {
+                let row = "";
+
+                for (let j = 1; j <= i; j++) {
+                    if ((i + j) % 2 === 0) {
+                        row += "1";
+                    } else {
+                        row += "0";
+                    }
+                }
+
+                console.log(row);
+            }
+        }
+
+    </script>
+
+    <script>
+        // pattern
+        //    1
+        //   212
+        //  32123
+        // 4321234
+        {
+            let n = 4;
+
+            for (let i = 1; i <= n; i++) {
+                let row = "";
+
+                // spaces
+                for (let j = 1; j <= n - i; j++) {
+                    row += " ";
+                }
+
+                for (let j = i; j >= 1; j--) {
+                    row += j;
+                }
+                // spaces
+                for (let j = 2; j <= i; j++) {
+                    row += j;
+                }
+
+                console.log(row);
+            }
+        }
+    </script>
+    <script>
+        // pattern
+
+        // *****
+        //  *****
+        //   *****
+        //    *****
+        //     *****
+
+        {
+            let n = 5;
+
+            for (let i = 1; i <= n; i++) {
+                let row = "";
+                //  spaces
+                for (let j = 1; j < i; j++) {
+                    row += " ";
+                }
+
+                for (let j = 1; j <= n; j++) {
+                    row += "*";
+                }
+
+                console.log(row);
+            }
+        }
+
+    </script>
+
+    <script>
+        //        pattern
+
+        //       *
+        //      ***
+        //     *****
+        //    *******
+        //     *****
+        //      ***
+        //       *
+
+        {
+            let n = 4;
+            // upper part
+            for (let i = 1; i <= n; i++) {
+                let row = "";
+                // spaces
+                for (let j = 1; j <= n - i; j++) {
+                    row += " ";
+                    // stars
+                }
+                for (let j = 1; j <= 2 * i - 1; j++) {
+                    row += "*";
+                }
+
+                console.log(row);
+            }
+            // lower part
+            for (let i = n - 1; i >= 1; i--) {
+                let row = "";
+                // spaces
+                for (let j = 1; j <= n - i; j++) {
+                    row += " ";
+                }
+                // stars
+                for (let j = 1; j <= 2 * i - 1; j++) {
+                    row += "*";
+                }
+                console.log(row);
+            }
+        }
+
+
+    </script>
+    <script>
+        // pattern
+
+        // *      *
+        // **    **
+        // ***  ***
+        // ********
+        // ***  ***
+        // **    **
+        // *      *
+
+        {
+            let n = 4;
+
+            // upper part
+            for (let i = 1; i <= n; i++) {
+                let row = "";
+                for (let j = 1; j <= i; j++) {
+                    row += "*";
+                }
+                for (let j = 1; j <= 2 * (n - i); j++) {
+                    row += " ";
+                }
+                for (let j = 1; j <= i; j++) {
+                    row += "*";
+                }
+                console.log(row);
+            }
+
+            // lower part
+            for (let i = n - 1; i >= 1; i--) {
+                let row = "";
+                for (let j = 1; j <= i; j++) {
+                    row += "*";
+                }
+                for (let j = 1; j <= 2 * (n - i); j++) {
+                    row += " ";
+                }
+                for (let j = 1; j <= i; j++) {
+                    row += "*";
+                }
+
+                console.log(row);
+            }
+        }
+    </script>
+
+    <script>
+        // pattern
+
+        // *****
+        // *****
+        // *****
+        // *****
+        {
+            let n = 5;
+
+            for (let i = 1; i <= n; i++) {
+                let row = "";
+
+                for (let j = 1; j <= n; j++) {
+                    row += "*";
+                }
+
+                console.log(row);
+            }
+        }
+
+    </script>
+
+    <script>
+        //  pattern
+
+        //    *
+        //    **
+        //    ***
+        //    ****
+        //    *****
+
+        {
+            let n = 5;
+
+            for (let i = 1; i <= n; i++) {
+                let row = "";
+
+                for (let j = 1; j <= i; j++) {
+                    row += "*";
+                }
+
+                console.log(row);
+            }
+        }
+    </script>
+
+    <script>
+        //  pattern
+
+        //  *****
+        //  ****
+        //  ***
+        //  **
+        //  *
+        {
+            let n = 5;
+
+            for (let i = n; i >= 1; i--) {
+                let row = "";
+
+                for (let j = 1; j <= i; j++) {
+                    row += "*";
+                }
+
+                console.log(row);
+            }
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    background-color: white;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px gray;
+    text-align: center;
+    width: 400px;
+}
+h2 {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: black;
+}
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: black;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid gray;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkblue;
+}
+
+#result {
+    margin-top: 21px;
+    font-size: 16px;
+    color: black;
+}
+
+.student-info {
+    margin-top: 20px;
+    text-align: left;
+    font-size: 14px;
+    color: black;
+}
