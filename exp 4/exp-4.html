@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Calculator</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 500px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        h1 {
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-size: 18px;
+            color: #666;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background: #2f80ed;
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-bottom: 25px;
+        }
+
+        button:hover {
+            background: #1c6dd0;
+        }
+
+        #result {
+            font-size: 22px;
+            font-weight: bold;
+            color: #555;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Student Result Calculator</h1>
+        <label for="subjects">Enter Number of Subjects</label>
+        <input type="number" id="subjects" placeholder="Enter subjects" min="1">
+        <button onclick="calculateResult()">Calculate Result</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        function calculateResult() {
+            let subjects = parseInt(document.getElementById("subjects").value);
+            let total = 0;
+            let average = 0;
+            let grade = "";
+            let result = "PASS";
+            let marks;
+            if (isNaN(subjects) || subjects <= 0) {
+                document.getElementById("result").innerHTML = "Please enter a valid number of subjects.";
+                return;
+            }
+            // Loop to take marks of each subject
+            for (let i = 1; i <= subjects; i++) {
+                marks = parseFloat(prompt("Enter marks for Subject " + i + " (out of 100):"));
+                if (isNaN(marks) || marks < 0 || marks > 100) {
+                    alert("Invalid marks entered for Subject " + i + ". Please enter marks between 0 and100.");
+                    return;
+                }
+                // Condition for fail
+                if (marks < 33) {
+                    result = "FAIL";
+                }
+                total += marks;
+            }
+            average = total / subjects;
+            // Grade using conditions
+            if (average >= 90) {
+                grade = "A+";
+            } else if (average >= 80) {
+                grade = "A";
+            } else if (average >= 70) {
+                grade = "B+";
+            }
